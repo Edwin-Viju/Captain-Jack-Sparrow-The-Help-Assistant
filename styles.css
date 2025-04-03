@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+header {
+    background: #333;
+    color: white;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.hero {
+    background: url('https://source.unsplash.com/1600x900/?technology,security') no-repeat center;
+    background-size: cover;
+    color: white;
+    padding: 100px 20px;
+}
+
+section {
+    padding: 50px 20px;
+}
+
+#chatbot {
+    background: #fff;
+    padding: 50px;
+}
+
+footer {
+    background: #222;
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
