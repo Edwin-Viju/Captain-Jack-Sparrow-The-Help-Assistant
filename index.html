@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proxy Smart Chatbot</title>
+    <title>Proxy Smart - Smart Proximity Alert System</title>
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-    
+
+    <!-- Embedded CSS for Styling -->
     <style>
         /* Global Styles */
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background: #f8f9fa;
             text-align: center;
         }
 
         /* Navigation Bar */
         header {
-            background: #333;
+            background: #222;
             color: white;
             padding: 15px 0;
             position: fixed;
@@ -31,19 +36,19 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: auto;
             padding: 0 20px;
         }
 
-        nav .logo {
+        .logo {
             font-size: 24px;
             font-weight: bold;
+            text-transform: uppercase;
         }
 
         nav ul {
             list-style: none;
-            padding: 0;
             display: flex;
         }
 
@@ -64,16 +69,45 @@
 
         /* Hero Section */
         .hero {
-            background: url('https://source.unsplash.com/1600x900/?technology,security') no-repeat center;
+            background: url('https://source.unsplash.com/1600x900/?security,technology') no-repeat center;
             background-size: cover;
             color: white;
-            padding: 120px 20px;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            font-size: 18px;
+            color: white;
+            background: #f8c13a;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #d4a02d;
         }
 
         /* Sections */
         section {
-            padding: 50px 20px;
+            padding: 60px 20px;
             max-width: 1000px;
             margin: auto;
             text-align: left;
@@ -81,18 +115,18 @@
 
         h2 {
             color: #333;
-            border-bottom: 2px solid #f8c13a;
+            border-bottom: 3px solid #f8c13a;
             display: inline-block;
             padding-bottom: 5px;
+            margin-bottom: 20px;
         }
 
-        /* Features */
-        #features ul {
+        .features ul {
             list-style: none;
             padding: 0;
         }
 
-        #features li {
+        .features li {
             font-size: 18px;
             margin: 10px 0;
         }
@@ -100,7 +134,7 @@
         /* Chatbot */
         #chatbot {
             background: white;
-            padding: 50px;
+            padding: 40px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
@@ -111,12 +145,38 @@
             color: white;
             padding: 20px;
             margin-top: 20px;
-            text-align: center;
         }
 
-        /* Smooth Scrolling */
-        html {
-            scroll-behavior: smooth;
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 10px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+        }
+
+        /* Scroll Animations */
+        .animate {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .animate.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
     </style>
@@ -138,30 +198,31 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Welcome to Proxy Smart</h1>
+        <h1>Proxy Smart</h1>
         <p>Smart Proximity Alert System for Personal Belongings</p>
+        <a href="#chatbot" class="btn">Try Our Chatbot</a>
     </section>
 
     <!-- Project Overview -->
-    <section id="overview">
-        <h2>About Proxy Smart</h2>
-        <p>Proxy Smart is an innovative security solution combining an electronic device with a mobile app to prevent theft and loss of personal belongings.</p>
+    <section id="overview" class="animate">
+        <h2>What is Proxy Smart?</h2>
+        <p>Proxy Smart is an innovative security device with a mobile app that prevents theft and loss of personal belongings.</p>
     </section>
 
     <!-- Features Section -->
-    <section id="features">
+    <section id="features" class="animate">
         <h2>Key Features</h2>
         <ul>
-            <li>🔔 Real-time alerts when belongings are moved beyond a set proximity</li>
-            <li>📡 Bluetooth Low Energy (BLE) for efficient tracking</li>
-            <li>📱 User-friendly app with customizable settings</li>
-            <li>🔋 Low power consumption for extended battery life</li>
-            <li>🔐 Secure data storage and encryption</li>
+            <li>✅ Real-time alerts when belongings move beyond a set distance</li>
+            <li>✅ Bluetooth Low Energy (BLE) for tracking</li>
+            <li>✅ Secure data encryption for privacy</li>
+            <li>✅ User-friendly mobile app</li>
+            <li>✅ Long battery life with power-saving mode</li>
         </ul>
     </section>
 
     <!-- Chatbot Section -->
-    <section id="chatbot">
+    <section id="chatbot" class="animate">
         <h2>Chat with Proxy Smart Assistant</h2>
         <df-messenger
             chat-icon="https://avatarfiles.alphacoders.com/268/268921.jpg"
@@ -173,20 +234,26 @@
     </section>
 
     <!-- Contact Section -->
-    <footer id="contact">
+    <footer id="contact" class="animate">
         <h2>Contact Us</h2>
         <p>Email: support@proxysmart.com | Phone: +123 456 7890</p>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener("click", function(event) {
-                event.preventDefault();
-                document.querySelector(this.getAttribute("href")).scrollIntoView({ behavior: "smooth" });
+        // Scroll Animations
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
             });
+        });
+
+        document.querySelectorAll('.animate').forEach(section => {
+            observer.observe(section);
         });
     </script>
 
 </body>
 </html>
+
