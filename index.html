@@ -1,17 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proxy Smart Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 </head>
 <body>
-    <h2>Chat with Proxy Smart Assistant</h2>
-<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-<df-messenger
-  chat-icon="https:&#x2F;&#x2F;avatarfiles.alphacoders.com&#x2F;268&#x2F;268921.jpg"
-  intent="WELCOME"
-  chat-title="JackSparrow"
-  agent-id="7117ee79-e798-4bbd-8a7b-b9d39cee540e"
-  language-code="en"
-></df-messenger>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="logo">Proxy Smart</div>
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#chatbot">Chatbot</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to Proxy Smart</h1>
+        <p>Smart Proximity Alert System for Personal Belongings</p>
+    </section>
+
+    <!-- Project Overview -->
+    <section id="overview">
+        <h2>About Proxy Smart</h2>
+        <p>Proxy Smart is an innovative security solution combining an electronic device with a mobile app to prevent theft and loss of personal belongings.</p>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+        <h2>Key Features</h2>
+        <ul>
+            <li>🔔 Real-time alerts when belongings are moved beyond a set proximity</li>
+            <li>📡 Bluetooth Low Energy (BLE) for efficient tracking</li>
+            <li>📱 User-friendly app with customizable settings</li>
+            <li>🔋 Low power consumption for extended battery life</li>
+            <li>🔐 Secure data storage and encryption</li>
+        </ul>
+    </section>
+
+    <!-- Chatbot Section -->
+    <section id="chatbot">
+        <h2>Chat with Proxy Smart Assistant</h2>
+        <df-messenger
+            chat-icon="https://avatarfiles.alphacoders.com/268/268921.jpg"
+            intent="WELCOME"
+            chat-title="JackSparrow"
+            agent-id="7117ee79-e798-4bbd-8a7b-b9d39cee540e"
+            language-code="en">
+        </df-messenger>
+    </section>
+
+    <!-- Contact Section -->
+    <footer id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: support@proxysmart.com | Phone: +123 456 7890</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function(event) {
+                event.preventDefault();
+                document.querySelector(this.getAttribute("href")).scrollIntoView({ behavior: "smooth" });
+            });
+        });
+    </script>
+
 </body>
 </html>
