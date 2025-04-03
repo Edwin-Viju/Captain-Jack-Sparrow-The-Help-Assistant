@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proxy Smart - Smart Proximity Alert System</title>
-    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <link rel="stylesheet" href="styles.css">
 
-    <!-- Embedded CSS for Styling -->
     <style>
-        /* Global Styles */
+        /* General Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Arial', sans-serif;
         }
-        
+
         body {
-            background: #f8f9fa;
+            background: #f4f4f4;
+            color: #333;
             text-align: center;
         }
 
@@ -44,7 +44,6 @@
         .logo {
             font-size: 24px;
             font-weight: bold;
-            text-transform: uppercase;
         }
 
         nav ul {
@@ -131,20 +130,29 @@
             margin: 10px 0;
         }
 
-        /* Chatbot */
-        #chatbot {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        /* Security Features */
+        .security {
+            background: #eaeaea;
+            padding: 50px 20px;
         }
 
-        /* Footer */
-        footer {
-            background: #222;
-            color: white;
-            padding: 20px;
-            margin-top: 20px;
+        /* Testimonials */
+        .testimonials {
+            background: #f8f8f8;
+            padding: 50px 20px;
+        }
+
+        .testimonial {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        /* Chatbot Integration */
+        .chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
         }
 
         /* Responsive */
@@ -166,31 +174,19 @@
                 font-size: 18px;
             }
         }
-
-        /* Scroll Animations */
-        .animate {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .animate.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <header>
         <nav>
             <div class="logo">Proxy Smart</div>
             <ul>
                 <li><a href="#overview">Overview</a></li>
                 <li><a href="#features">Features</a></li>
-                <li><a href="#chatbot">Chatbot</a></li>
+                <li><a href="#security">Security</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -199,61 +195,60 @@
     <!-- Hero Section -->
     <section class="hero">
         <h1>Proxy Smart</h1>
-        <p>Smart Proximity Alert System for Personal Belongings</p>
-        <a href="#chatbot" class="btn">Try Our Chatbot</a>
+        <p>Your Personal Security Companion</p>
+        <a href="#features" class="btn">Discover More</a>
     </section>
 
-    <!-- Project Overview -->
-    <section id="overview" class="animate">
+    <!-- Product Overview -->
+    <section id="overview">
         <h2>What is Proxy Smart?</h2>
-        <p>Proxy Smart is an innovative security device with a mobile app that prevents theft and loss of personal belongings.</p>
+        <p>Proxy Smart is a **smart proximity alert system** designed to prevent theft and loss of personal belongings using **Bluetooth Low Energy (BLE)** and real-time alerts.</p>
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="animate">
+    <section id="features">
         <h2>Key Features</h2>
-        <ul>
-            <li>✅ Real-time alerts when belongings move beyond a set distance</li>
-            <li>✅ Bluetooth Low Energy (BLE) for tracking</li>
-            <li>✅ Secure data encryption for privacy</li>
-            <li>✅ User-friendly mobile app</li>
-            <li>✅ Long battery life with power-saving mode</li>
+        <ul class="features">
+            <li>✅ **Real-Time Alerts** when your belongings move out of range</li>
+            <li>✅ **Bluetooth Low Energy (BLE)** for efficient tracking</li>
+            <li>✅ **Secure Encrypted Data** to keep your information private</li>
+            <li>✅ **Long Battery Life** with energy-saving mode</li>
+            <li>✅ **Compact & Stylish Design** for convenience</li>
         </ul>
     </section>
 
-    <!-- Chatbot Section -->
-    <section id="chatbot" class="animate">
-        <h2>Chat with Proxy Smart Assistant</h2>
-        <df-messenger
-            chat-icon="https://avatarfiles.alphacoders.com/268/268921.jpg"
-            intent="WELCOME"
-            chat-title="JackSparrow"
-            agent-id="7117ee79-e798-4bbd-8a7b-b9d39cee540e"
-            language-code="en">
-        </df-messenger>
+    <!-- Security Section -->
+    <section id="security" class="security">
+        <h2>Security & Privacy</h2>
+        <p>We use **AES 256-bit encryption** to ensure your data is **secure** and **protected** at all times.</p>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <h2>What Our Users Say</h2>
+        <p class="testimonial">"Proxy Smart saved my laptop from being stolen at a cafe! Highly recommended!" - **John Doe**</p>
+        <p class="testimonial">"Simple, effective, and affordable. A must-have for travelers!" - **Emily Smith**</p>
     </section>
 
     <!-- Contact Section -->
-    <footer id="contact" class="animate">
+    <footer id="contact">
         <h2>Contact Us</h2>
         <p>Email: support@proxysmart.com | Phone: +123 456 7890</p>
     </footer>
 
-    <script>
-        // Scroll Animations
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        });
-
-        document.querySelectorAll('.animate').forEach(section => {
-            observer.observe(section);
-        });
-    </script>
+    <!-- Chatbot Integration -->
+    <div class="chatbot-container">
+        <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+        <df-messenger
+          chat-icon="https://avatarfiles.alphacoders.com/268/268921.jpg"
+          intent="WELCOME"
+          chat-title="JackSparrow"
+          agent-id="7117ee79-e798-4bbd-8a7b-b9d39cee540e"
+          language-code="en"
+        ></df-messenger>
+    </div>
 
 </body>
 </html>
+
 
